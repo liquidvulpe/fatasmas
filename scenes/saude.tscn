@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ce4c0egq8s2o3"]
+
+[ext_resource type="Texture2D" uid="uid://cju8ygwtnb3x4" path="res://assets/saude.png" id="1_21m84"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x8vu2"]
+size = Vector2(16, 16)
+
+[node name="saude" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_21m84")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_x8vu2")
+debug_color = Color(0.986043, 0, 0.327662, 0.42)

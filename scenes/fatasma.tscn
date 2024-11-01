@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddslys36yg75p"]
+
+[ext_resource type="Script" path="res://scripts/fatasma.gd" id="1_4b7a8"]
+[ext_resource type="Texture2D" uid="uid://c2ihmascp30v4" path="res://assets/fatasma.png" id="2_sxrui"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6vnoy"]
+size = Vector2(16, 16)
+
+[node name="fatasma" type="CharacterBody2D"]
+script = ExtResource("1_4b7a8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_sxrui")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6vnoy")
