@@ -7,16 +7,15 @@ class_name GridArea
 		span = value;
 		queue_redraw();
 
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+@onready var area_size: Vector2 = Vector2(collision_shape_2d.shape.size.x, collision_shape_2d.shape.size.y)
+
+var player: CharacterBody2D
+var grid_position: Vector2
 var gizmos_color: Color = Color.GREEN:
 	set(value):
 		gizmos_color = value;
 		queue_redraw()
-
-@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
-
-var player: CharacterBody2D
-
-@onready var area_size: Vector2 = Vector2(collision_shape_2d.shape.size.x, collision_shape_2d.shape.size.y)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -26,7 +25,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if(player == null):
 		return
-
+	print(str("Grid position: ", grid_position))
+	
 	if(player.global_position.x > global_position.x + area_size.x/2 - span):
 		print("Direita")
 	elif(player.global_position.x < global_position.x - area_size.x/2 + span):
