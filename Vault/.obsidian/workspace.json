@@ -1,0 +1,196 @@
+{
+  "main": {
+    "id": "9d6999d77904c88a",
+    "type": "split",
+    "children": [
+      {
+        "id": "12efcb6de563af59",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "447b14fb91c56844",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "Fluxograma.canvas",
+                "viewState": {
+                  "x": 445.74908003866324,
+                  "y": 246.11410188322975,
+                  "zoom": -0.5523974355650239
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "Fluxograma"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "60826608f0e36ee2",
+    "type": "split",
+    "children": [
+      {
+        "id": "e65a889359de7fff",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "66bf82cd2bf774be",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "d6605f7ac12cff72",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "86e1b1b6a2ca70ba",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "92fb1e0e680f84c5",
+    "type": "split",
+    "children": [
+      {
+        "id": "1c589ea47274991b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1444cb9bb1d486c9",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Fluxograma.canvas",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Fluxograma"
+            }
+          },
+          {
+            "id": "1834dc98a56351ba",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Fluxograma.canvas",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Fluxograma"
+            }
+          },
+          {
+            "id": "3b16077bd4c207dd",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "dc453ef7402bb8f7",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Fluxograma.canvas"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Fluxograma"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "447b14fb91c56844",
+  "lastOpenFiles": [
+    "Áreas.png.import",
+    "statemachine/scripts/fatasma.gd",
+    "statemachine/scripts",
+    "statemachine/scenes/main.tscn",
+    "statemachine/scenes/fatasma.tscn",
+    "statemachine/scenes",
+    "statemachine/assets/fantasy_ [version 2.0]/tundra_/tundra_.png.import",
+    "statemachine/assets/fantasy_ [version 2.0]/tundra_/tundra_.png",
+    "statemachine/assets/fantasy_ [version 2.0]/tundra_/tundra_ [resources].png.import",
+    "statemachine/assets/fantasy_ [version 2.0]/tundra_/tundra_ [resources].png",
+    "statemachine/assets/fantasy_ [version 2.0]/tundra_/tundra_ [ice].png.import",
+    "statemachine/assets/fantasy_ [version 2.0]/tundra_/tundra_ [ice].png",
+    "statemachine/assets/fantasy_ [version 2.0]/tundra_/tundra_ [fountain].png.import",
+    "statemachine/assets/fantasy_ [version 2.0]/tundra_/tundra_ [fountain].png",
+    "statemachine/assets/fantasy_ [version 2.0]/tundra_/tundra_ [fencesAndWalls].png.import",
+    "statemachine/assets/fantasy_ [version 2.0]/tundra_/tundra_ [fencesAndWalls].png",
+    "statemachine/assets/fantasy_ [version 2.0]/tundra_/tundra_ [bridgeVertical].png",
+    "statemachine/assets/fantasy_ [version 2.0]/tundra_/tundra_ [bridgeHorizontal].png",
+    "statemachine/assets/fantasy_ [version 2.0]/tundra_/tundra_ [bridgeAnimatedTiles].png",
+    "statemachine/assets/fantasy_ [version 2.0]/tundra_/tundraPath_.png",
+    "statemachine/assets/fantasy_ [version 2.0]/tundra_/igloo_.png",
+    "Jogador.md",
+    "Fluxograma.canvas",
+    "Inimigo.md",
+    "Welcome.md"
+  ]
+}
