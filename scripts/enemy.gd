@@ -15,5 +15,3 @@ func _physics_process(delta):
 	if(curr_area != null and target != null):
 		position += sign(target.position - position)*SPEED
 		move_and_slide()
-
-
