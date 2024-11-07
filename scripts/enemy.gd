@@ -3,6 +3,8 @@ extends CharacterBody2D
 var target
 const SPEED = 0.75
 var curr_area
+var areas: Array
+@onready var player = $'/root/'.find_child("fatasma", true, false)
 
 var max_life = 10
 var life = max_life
@@ -10,10 +12,15 @@ var atk_power = 10
 
 func _on_area_2d_area_entered(area):
 	if(area.is_in_group("area")):
+		#areas.append(area)
 		curr_area = area
 
 func _process(delta):
-	target = curr_area.player
+	if(curr_area != null):
+		if(curr_area.isActive):
+			target = player
+		else:
+			target = null
 	if(life <= 0):
 		queue_free()
 

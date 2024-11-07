@@ -35,13 +35,16 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-#func _draw() -> void:
-	#for i in size.x:
-		#for j in size.y:
-			#draw_rect(Rect2(Vector2((global_position.x + cell_size) * i, (global_position.y + cell_size) * j), Vector2(cell_size,cell_size)), Color(Color.RED, 0.2), true)
-			#
-			#draw_line(Vector2(cell_size*i, cell_size*j+0.5),Vector2(cell_size*i + cell_size, cell_size*j+0.5), Color.RED, 1)
-			#draw_line(Vector2(cell_size*i, cell_size*j+cell_size-0.5),Vector2(cell_size*i + cell_size, cell_size*j+cell_size-0.5), Color.RED, 1)
-			#
-			#draw_line(Vector2(cell_size*i+0.5, cell_size*j),Vector2(cell_size*i+0.5, cell_size*j+cell_size), Color.RED, 1)
-			#draw_line(Vector2(cell_size*i-0.5+cell_size, cell_size*j),Vector2(cell_size*i-0.5+cell_size, cell_size*j+0.5+cell_size), Color.RED, 1)
+func _draw() -> void:
+	for i in size.x:
+		for j in size.y:
+			draw_rect(Rect2(Vector2((global_position.x + cell_size) * i, (global_position.y + cell_size) * j), Vector2(cell_size,cell_size)), Color(Color.RED, 0.2), true)
+			
+			draw_line(Vector2(cell_size*i, cell_size*j+0.5),Vector2(cell_size*i + cell_size, cell_size*j+0.5), Color.RED, 1)
+			draw_line(Vector2(cell_size*i, cell_size*j+cell_size-0.5),Vector2(cell_size*i + cell_size, cell_size*j+cell_size-0.5), Color.RED, 1)
+			
+			draw_line(Vector2(cell_size*i+0.5, cell_size*j),Vector2(cell_size*i+0.5, cell_size*j+cell_size), Color.RED, 1)
+			draw_line(Vector2(cell_size*i-0.5+cell_size, cell_size*j),Vector2(cell_size*i-0.5+cell_size, cell_size*j+0.5+cell_size), Color.RED, 1)
+
+func get_cell(x, y):
+	return grid_matrix[x][y]
