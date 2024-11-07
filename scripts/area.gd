@@ -25,7 +25,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if(player == null):
 		return
-	print(str("Grid position: ", grid_position))
+	#print(str("Grid position: ", grid_position))
 	
 	if(player.global_position.x > global_position.x + area_size.x/2 - span):
 		print("Direita")

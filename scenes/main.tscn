@@ -1,13 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cu2hqqnslku0t"]
+[gd_scene load_steps=8 format=3 uid="uid://cu2hqqnslku0t"]
 
 [ext_resource type="Texture2D" uid="uid://d1fph4bavkqeb" path="res://assets/Dungeon Tile Set.png" id="1_ja162"]
 [ext_resource type="PackedScene" uid="uid://ddslys36yg75p" path="res://scenes/fatasma.tscn" id="2_hoieb"]
-<<<<<<< HEAD
-[ext_resource type="PackedScene" uid="uid://0mpbp73km2cx" path="res://scenes/area.tscn" id="3_76jwj"]
-[ext_resource type="PackedScene" uid="uid://c457u1obviu3n" path="res://scenes/enemy.tscn" id="4_s3inu"]
-=======
 [ext_resource type="PackedScene" uid="uid://dv23h5bqvhanu" path="res://scenes/grid.tscn" id="3_orcp7"]
->>>>>>> 4503ade406176daf8738ba306c807f842b1a4fbc
+[ext_resource type="PackedScene" uid="uid://c457u1obviu3n" path="res://scenes/enemy.tscn" id="4_63j10"]
+[ext_resource type="PackedScene" uid="uid://ce4c0egq8s2o3" path="res://scenes/saude.tscn" id="5_l76j6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t3wv6"]
 texture = ExtResource("1_ja162")
@@ -447,53 +444,30 @@ zoom = Vector2(5, 5)
 
 [node name="Grid" parent="." instance=ExtResource("3_orcp7")]
 
-<<<<<<< HEAD
-[node name="Area2D" parent="areas" instance=ExtResource("3_76jwj")]
-position = Vector2(80, 80)
+[node name="enemy" parent="." instance=ExtResource("4_63j10")]
+position = Vector2(248, 89)
 
-[node name="Area2D2" parent="areas" instance=ExtResource("3_76jwj")]
-position = Vector2(240, 80)
+[node name="saude" parent="." instance=ExtResource("5_l76j6")]
+position = Vector2(93, 243)
 
-[node name="Area2D3" parent="areas" instance=ExtResource("3_76jwj")]
-position = Vector2(400, 80)
+[node name="saude2" parent="." instance=ExtResource("5_l76j6")]
+position = Vector2(237, 246)
 
-[node name="Area2D4" parent="areas" instance=ExtResource("3_76jwj")]
-position = Vector2(80, 240)
-
-[node name="Area2D5" parent="areas" instance=ExtResource("3_76jwj")]
-position = Vector2(240, 240)
-
-[node name="Area2D6" parent="areas" instance=ExtResource("3_76jwj")]
-position = Vector2(400, 240)
-
-[node name="Area2D7" parent="areas" instance=ExtResource("3_76jwj")]
-position = Vector2(80, 400)
-
-[node name="Area2D8" parent="areas" instance=ExtResource("3_76jwj")]
-position = Vector2(240, 400)
-
-[node name="Area2D9" parent="areas" instance=ExtResource("3_76jwj")]
-position = Vector2(400, 400)
-
-[node name="enemy" parent="." instance=ExtResource("4_s3inu")]
-position = Vector2(270, 93)
-=======
 [connection signal="body_entered" from="Grid/Area2D" to="Grid/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Grid/Area2D" to="Grid/Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="Grid/@Area2D@205661" to="Grid/@Area2D@205661" method="_on_body_entered"]
-[connection signal="body_exited" from="Grid/@Area2D@205661" to="Grid/@Area2D@205661" method="_on_body_exited"]
-[connection signal="body_entered" from="Grid/@Area2D@205662" to="Grid/@Area2D@205662" method="_on_body_entered"]
-[connection signal="body_exited" from="Grid/@Area2D@205662" to="Grid/@Area2D@205662" method="_on_body_exited"]
-[connection signal="body_entered" from="Grid/@Area2D@205663" to="Grid/@Area2D@205663" method="_on_body_entered"]
-[connection signal="body_exited" from="Grid/@Area2D@205663" to="Grid/@Area2D@205663" method="_on_body_exited"]
-[connection signal="body_entered" from="Grid/@Area2D@205664" to="Grid/@Area2D@205664" method="_on_body_entered"]
-[connection signal="body_exited" from="Grid/@Area2D@205664" to="Grid/@Area2D@205664" method="_on_body_exited"]
-[connection signal="body_entered" from="Grid/@Area2D@205665" to="Grid/@Area2D@205665" method="_on_body_entered"]
-[connection signal="body_exited" from="Grid/@Area2D@205665" to="Grid/@Area2D@205665" method="_on_body_exited"]
-[connection signal="body_entered" from="Grid/@Area2D@205666" to="Grid/@Area2D@205666" method="_on_body_entered"]
-[connection signal="body_exited" from="Grid/@Area2D@205666" to="Grid/@Area2D@205666" method="_on_body_exited"]
-[connection signal="body_entered" from="Grid/@Area2D@205667" to="Grid/@Area2D@205667" method="_on_body_entered"]
-[connection signal="body_exited" from="Grid/@Area2D@205667" to="Grid/@Area2D@205667" method="_on_body_exited"]
-[connection signal="body_entered" from="Grid/@Area2D@205668" to="Grid/@Area2D@205668" method="_on_body_entered"]
-[connection signal="body_exited" from="Grid/@Area2D@205668" to="Grid/@Area2D@205668" method="_on_body_exited"]
->>>>>>> 4503ade406176daf8738ba306c807f842b1a4fbc
+[connection signal="body_entered" from="Grid/@Area2D@39546" to="Grid/@Area2D@39546" method="_on_body_entered"]
+[connection signal="body_exited" from="Grid/@Area2D@39546" to="Grid/@Area2D@39546" method="_on_body_exited"]
+[connection signal="body_entered" from="Grid/@Area2D@39547" to="Grid/@Area2D@39547" method="_on_body_entered"]
+[connection signal="body_exited" from="Grid/@Area2D@39547" to="Grid/@Area2D@39547" method="_on_body_exited"]
+[connection signal="body_entered" from="Grid/@Area2D@39548" to="Grid/@Area2D@39548" method="_on_body_entered"]
+[connection signal="body_exited" from="Grid/@Area2D@39548" to="Grid/@Area2D@39548" method="_on_body_exited"]
+[connection signal="body_entered" from="Grid/@Area2D@39549" to="Grid/@Area2D@39549" method="_on_body_entered"]
+[connection signal="body_exited" from="Grid/@Area2D@39549" to="Grid/@Area2D@39549" method="_on_body_exited"]
+[connection signal="body_entered" from="Grid/@Area2D@39550" to="Grid/@Area2D@39550" method="_on_body_entered"]
+[connection signal="body_exited" from="Grid/@Area2D@39550" to="Grid/@Area2D@39550" method="_on_body_exited"]
+[connection signal="body_entered" from="Grid/@Area2D@39551" to="Grid/@Area2D@39551" method="_on_body_entered"]
+[connection signal="body_exited" from="Grid/@Area2D@39551" to="Grid/@Area2D@39551" method="_on_body_exited"]
+[connection signal="body_entered" from="Grid/@Area2D@39552" to="Grid/@Area2D@39552" method="_on_body_entered"]
+[connection signal="body_exited" from="Grid/@Area2D@39552" to="Grid/@Area2D@39552" method="_on_body_exited"]
+[connection signal="body_entered" from="Grid/@Area2D@39553" to="Grid/@Area2D@39553" method="_on_body_entered"]
+[connection signal="body_exited" from="Grid/@Area2D@39553" to="Grid/@Area2D@39553" method="_on_body_exited"]

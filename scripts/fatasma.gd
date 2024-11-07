@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 
 const SPEED = 150.0
+var max_life = 100
+var life = max_life
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -20,3 +22,15 @@ func _physics_process(delta):
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 
 	move_and_slide()
+	
+func take_dmg(atk_power):
+	if (life >= 0 and $Timer.is_stopped()):
+		life -= atk_power
+		$Timer.start()
+		print(life)
+
+func heal(healing):
+	if(life<=max_life):
+		life += healing
+		print(life)
+		
