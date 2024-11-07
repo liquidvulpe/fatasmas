@@ -28,14 +28,18 @@ func _process(delta: float) -> void:
 	#print(str("Grid position: ", grid_position))
 	
 	if(player.global_position.x > global_position.x + area_size.x/2 - span):
-		print("Direita")
+		pass
+		#print("Direita")
 	elif(player.global_position.x < global_position.x - area_size.x/2 + span):
-		print("Esquerda")
+		pass
+		#print("Esquerda")
 		
 	if(player.global_position.y < global_position.y - area_size.y/2 + span):
-		print("Cima")
+		pass
+		#print("Cima")
 	elif(player.global_position.y > global_position.y + area_size.y/2 - span):
-		print("Baixo")
+		pass
+		#print("Baixo")
 
 func _draw() -> void:
 	draw_line(Vector2(area_size.x/-2, area_size.y/-2+0.05 + span), Vector2(area_size.x/2,area_size.y/-2+0.05 + span), gizmos_color, 1)

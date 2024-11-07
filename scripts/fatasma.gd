@@ -4,10 +4,20 @@ extends CharacterBody2D
 const SPEED = 150.0
 var max_life = 100
 var life = max_life
+var atk_power = 10
+var max_munition = 3
+var munition = max_munition
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+func _input(event):
+	if (event.is_action_pressed("attack") and munition > 0 and $Area2D/atkTimer.is_stopped()):
+		$Area2D.monitoring= true
+		$Area2D/Sprite2D.visible = true
+		$Area2D/atkTimer.start()
+		munition -= 1
+		print(munition)
 
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
@@ -30,7 +40,19 @@ func take_dmg(atk_power):
 		print(life)
 
 func heal(healing):
-	if(life<=max_life):
+	if(life<max_life):
 		life += healing
 		print(life)
 		
+func recharge(charge):
+	if(munition < max_munition):
+		munition += charge
+		print(munition)
+
+func _on_area_2d_body_entered(body):
+	if(body.is_in_group("enemy")):
+		body.take_dmg(atk_power)
+
+func _on_atk_timer_timeout():
+	$Area2D.monitoring = false
+	$Area2D/Sprite2D.visible = false

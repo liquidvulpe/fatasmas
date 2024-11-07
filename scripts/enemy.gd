@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
 var target
-const SPEED = 0.5
+const SPEED = 0.75
 var curr_area
 
-var max_life = 100
+var max_life = 10
 var life = max_life
 var atk_power = 10
 
@@ -18,10 +18,14 @@ func _process(delta):
 		queue_free()
 
 func _physics_process(delta):
-	if(curr_area != null and target != null):
+	if(curr_area != null and target != null and $Timer.is_stopped()):
 		position += sign(target.position - position)*SPEED
 		move_and_slide()
 
+func take_dmg(atk_power):
+	if(life>0):
+		life -= atk_power
+		$Timer.start()
 
 func _on_area_2d_body_entered(body):
 	if(body.is_in_group("player")):

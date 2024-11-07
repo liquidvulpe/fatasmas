@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cu2hqqnslku0t"]
+[gd_scene load_steps=9 format=3 uid="uid://cu2hqqnslku0t"]
 
 [ext_resource type="Texture2D" uid="uid://d1fph4bavkqeb" path="res://assets/Dungeon Tile Set.png" id="1_ja162"]
 [ext_resource type="PackedScene" uid="uid://ddslys36yg75p" path="res://scenes/fatasma.tscn" id="2_hoieb"]
 [ext_resource type="PackedScene" uid="uid://dv23h5bqvhanu" path="res://scenes/grid.tscn" id="3_orcp7"]
 [ext_resource type="PackedScene" uid="uid://c457u1obviu3n" path="res://scenes/enemy.tscn" id="4_63j10"]
 [ext_resource type="PackedScene" uid="uid://ce4c0egq8s2o3" path="res://scenes/saude.tscn" id="5_l76j6"]
+[ext_resource type="PackedScene" uid="uid://bydxbjhf8dg71" path="res://scenes/municao.tscn" id="6_b2clh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t3wv6"]
 texture = ExtResource("1_ja162")
@@ -453,21 +454,33 @@ position = Vector2(93, 243)
 [node name="saude2" parent="." instance=ExtResource("5_l76j6")]
 position = Vector2(237, 246)
 
+[node name="municao" parent="." instance=ExtResource("6_b2clh")]
+position = Vector2(396, 245)
+
+[node name="municao2" parent="." instance=ExtResource("6_b2clh")]
+position = Vector2(241, 401)
+
+[node name="enemy2" parent="." instance=ExtResource("4_63j10")]
+position = Vector2(81, 398)
+
+[node name="enemy3" parent="." instance=ExtResource("4_63j10")]
+position = Vector2(403, 401)
+
 [connection signal="body_entered" from="Grid/Area2D" to="Grid/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Grid/Area2D" to="Grid/Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="Grid/@Area2D@39546" to="Grid/@Area2D@39546" method="_on_body_entered"]
-[connection signal="body_exited" from="Grid/@Area2D@39546" to="Grid/@Area2D@39546" method="_on_body_exited"]
-[connection signal="body_entered" from="Grid/@Area2D@39547" to="Grid/@Area2D@39547" method="_on_body_entered"]
-[connection signal="body_exited" from="Grid/@Area2D@39547" to="Grid/@Area2D@39547" method="_on_body_exited"]
-[connection signal="body_entered" from="Grid/@Area2D@39548" to="Grid/@Area2D@39548" method="_on_body_entered"]
-[connection signal="body_exited" from="Grid/@Area2D@39548" to="Grid/@Area2D@39548" method="_on_body_exited"]
-[connection signal="body_entered" from="Grid/@Area2D@39549" to="Grid/@Area2D@39549" method="_on_body_entered"]
-[connection signal="body_exited" from="Grid/@Area2D@39549" to="Grid/@Area2D@39549" method="_on_body_exited"]
-[connection signal="body_entered" from="Grid/@Area2D@39550" to="Grid/@Area2D@39550" method="_on_body_entered"]
-[connection signal="body_exited" from="Grid/@Area2D@39550" to="Grid/@Area2D@39550" method="_on_body_exited"]
-[connection signal="body_entered" from="Grid/@Area2D@39551" to="Grid/@Area2D@39551" method="_on_body_entered"]
-[connection signal="body_exited" from="Grid/@Area2D@39551" to="Grid/@Area2D@39551" method="_on_body_exited"]
-[connection signal="body_entered" from="Grid/@Area2D@39552" to="Grid/@Area2D@39552" method="_on_body_entered"]
-[connection signal="body_exited" from="Grid/@Area2D@39552" to="Grid/@Area2D@39552" method="_on_body_exited"]
-[connection signal="body_entered" from="Grid/@Area2D@39553" to="Grid/@Area2D@39553" method="_on_body_entered"]
-[connection signal="body_exited" from="Grid/@Area2D@39553" to="Grid/@Area2D@39553" method="_on_body_exited"]
+[connection signal="body_entered" from="Grid/@Area2D@57893" to="Grid/@Area2D@57893" method="_on_body_entered"]
+[connection signal="body_exited" from="Grid/@Area2D@57893" to="Grid/@Area2D@57893" method="_on_body_exited"]
+[connection signal="body_entered" from="Grid/@Area2D@57894" to="Grid/@Area2D@57894" method="_on_body_entered"]
+[connection signal="body_exited" from="Grid/@Area2D@57894" to="Grid/@Area2D@57894" method="_on_body_exited"]
+[connection signal="body_entered" from="Grid/@Area2D@57895" to="Grid/@Area2D@57895" method="_on_body_entered"]
+[connection signal="body_exited" from="Grid/@Area2D@57895" to="Grid/@Area2D@57895" method="_on_body_exited"]
+[connection signal="body_entered" from="Grid/@Area2D@57896" to="Grid/@Area2D@57896" method="_on_body_entered"]
+[connection signal="body_exited" from="Grid/@Area2D@57896" to="Grid/@Area2D@57896" method="_on_body_exited"]
+[connection signal="body_entered" from="Grid/@Area2D@57897" to="Grid/@Area2D@57897" method="_on_body_entered"]
+[connection signal="body_exited" from="Grid/@Area2D@57897" to="Grid/@Area2D@57897" method="_on_body_exited"]
+[connection signal="body_entered" from="Grid/@Area2D@57898" to="Grid/@Area2D@57898" method="_on_body_entered"]
+[connection signal="body_exited" from="Grid/@Area2D@57898" to="Grid/@Area2D@57898" method="_on_body_exited"]
+[connection signal="body_entered" from="Grid/@Area2D@57899" to="Grid/@Area2D@57899" method="_on_body_entered"]
+[connection signal="body_exited" from="Grid/@Area2D@57899" to="Grid/@Area2D@57899" method="_on_body_exited"]
+[connection signal="body_entered" from="Grid/@Area2D@57900" to="Grid/@Area2D@57900" method="_on_body_entered"]
+[connection signal="body_exited" from="Grid/@Area2D@57900" to="Grid/@Area2D@57900" method="_on_body_exited"]

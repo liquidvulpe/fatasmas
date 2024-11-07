@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddslys36yg75p"]
+[gd_scene load_steps=5 format=3 uid="uid://ddslys36yg75p"]
 
 [ext_resource type="Script" path="res://scripts/fatasma.gd" id="1_4b7a8"]
 [ext_resource type="Texture2D" uid="uid://c2ihmascp30v4" path="res://assets/fatasma.png" id="2_sxrui"]
-[ext_resource type="Texture2D" uid="uid://b7j8mhhpf5vat" path="res://assets/forcefield.png" id="3_t2i88"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6vnoy"]
 size = Vector2(16, 16)
@@ -22,9 +21,7 @@ shape = SubResource("RectangleShape2D_6vnoy")
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
-[node name="Area2D" type="Area2D" parent="." groups=["atk"]]
-collision_layer = 2
-collision_mask = 2
+[node name="Area2D" type="Area2D" parent="."]
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -33,11 +30,8 @@ shape = SubResource("CircleShape2D_36vdu")
 debug_color = Color(0.757191, 0.186325, 1, 0.42)
 
 [node name="atkTimer" type="Timer" parent="Area2D"]
+wait_time = 0.5
 one_shot = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-visible = false
-texture = ExtResource("3_t2i88")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Area2D/atkTimer" to="." method="_on_atk_timer_timeout"]
