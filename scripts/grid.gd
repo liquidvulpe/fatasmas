@@ -13,8 +13,13 @@ class_name grid
 		queue_redraw()
 
 @export var scene: Resource = preload("res://scenes/area.tscn")
+@onready var player: Player = $"../fatasma"
 
 var grid_matrix = []
+
+var main_scene: GridArea
+var horizontal: String = ""
+var vertical: String = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -33,7 +38,79 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if(player == null):
+		return
+	
+	var curr_area: GridArea = player.curr_area
+	
+	var area_size: Vector2 = player.curr_area.area_size
+	var span: int = player.curr_area.span
+	
+	var isFirstCol = curr_area.grid_position.x == 0
+	var isLastCol = curr_area.grid_position.x == size.x-1
+	var isFirstRow = curr_area.grid_position.y == 0
+	var isLastRow = curr_area.grid_position.y == size.y-1
+
+	if(player.curr_area == null):
+		return
+		
+	if(!isLastCol):
+		pass
+		
+	if(player.global_position.x < curr_area.global_position.x - area_size.x/2 + span):
+		horizontal = "esquerda"
+		if(!isFirstCol): grid_matrix[curr_area.grid_position.x-1][curr_area.grid_position.y].isActive = true
+		if(!isLastCol): grid_matrix[curr_area.grid_position.x+1][curr_area.grid_position.y].isActive = false
+	elif(player.global_position.x > curr_area.global_position.x + area_size.x/2 - span):
+		horizontal = "direita"
+		if(!isFirstCol): grid_matrix[curr_area.grid_position.x-1][curr_area.grid_position.y].isActive = false
+		if(!isLastCol): grid_matrix[curr_area.grid_position.x+1][curr_area.grid_position.y].isActive = true
+	else:
+		horizontal = ""
+		if(!isFirstCol): grid_matrix[curr_area.grid_position.x-1][curr_area.grid_position.y].isActive = false
+		if(!isLastCol): grid_matrix[curr_area.grid_position.x+1][curr_area.grid_position.y].isActive = false
+
+	if(player.global_position.y < curr_area.global_position.y - area_size.y/2 + span):
+		vertical = "cima"
+		if(!isFirstRow): grid_matrix[curr_area.grid_position.x][curr_area.grid_position.y-1].isActive = true
+		if(!isLastRow): grid_matrix[curr_area.grid_position.x][curr_area.grid_position.y+1].isActive = false
+	elif(player.global_position.y > curr_area.global_position.y + area_size.y/2 - span):
+		vertical = "baixo"
+		if(!isFirstRow): grid_matrix[curr_area.grid_position.x][curr_area.grid_position.y-1].isActive = false
+		if(!isLastRow): grid_matrix[curr_area.grid_position.x][curr_area.grid_position.y+1].isActive = true
+	else:
+		vertical = ""
+		if(!isFirstRow): grid_matrix[curr_area.grid_position.x][curr_area.grid_position.y-1].isActive = false
+		if(!isLastRow): grid_matrix[curr_area.grid_position.x][curr_area.grid_position.y+1].isActive = false
+	
+	# Diagonais
+	if(!isLastCol && !isFirstRow):
+		if(horizontal == "direita" && vertical == "cima"):
+			grid_matrix[curr_area.grid_position.x+1][curr_area.grid_position.y-1].isActive = true
+		else:
+			grid_matrix[curr_area.grid_position.x+1][curr_area.grid_position.y-1].isActive = false
+	
+	if(!isLastCol && !isLastRow):
+		if(horizontal == "direita" && vertical == "baixo"):
+			grid_matrix[curr_area.grid_position.x+1][curr_area.grid_position.y+1].isActive = true
+		else:
+			grid_matrix[curr_area.grid_position.x+1][curr_area.grid_position.y+1].isActive = false
+	
+	if(!isFirstCol && !isFirstRow):
+		if(horizontal == "esquerda" && vertical == "cima"):
+			grid_matrix[curr_area.grid_position.x-1][curr_area.grid_position.y-1].isActive = true
+		else:
+			grid_matrix[curr_area.grid_position.x-1][curr_area.grid_position.y-1].isActive = false
+	
+	if(!isFirstCol && !isLastRow):
+		if(horizontal == "esquerda" && vertical == "baixo"):
+			grid_matrix[curr_area.grid_position.x-1][curr_area.grid_position.y+1].isActive = true
+		else:
+			grid_matrix[curr_area.grid_position.x-1][curr_area.grid_position.y+1].isActive = false
+	
+
+	#print(horizontal)
+	#print(vertical)
 
 func _draw() -> void:
 	for i in size.x:

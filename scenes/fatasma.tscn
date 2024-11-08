@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddslys36yg75p"]
+[gd_scene load_steps=7 format=3 uid="uid://ddslys36yg75p"]
 
 [ext_resource type="Script" path="res://scripts/fatasma.gd" id="1_4b7a8"]
 [ext_resource type="Texture2D" uid="uid://c2ihmascp30v4" path="res://assets/fatasma.png" id="2_sxrui"]
@@ -8,6 +8,9 @@
 size = Vector2(16, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_36vdu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kl43h"]
+size = Vector2(16, 16)
 
 [node name="fatasma" type="CharacterBody2D"]
 script = ExtResource("1_4b7a8")
@@ -39,5 +42,12 @@ one_shot = true
 visible = false
 texture = ExtResource("3_t2i88")
 
+[node name="DetectionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("RectangleShape2D_kl43h")
+debug_color = Color(0.550529, 0.555137, 0.281058, 0.42)
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Area2D/atkTimer" to="." method="_on_atk_timer_timeout"]
+[connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_area_entered"]

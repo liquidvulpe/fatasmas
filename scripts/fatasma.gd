@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name Player
 
 const SPEED = 150.0
 var max_life = 100
@@ -7,9 +7,13 @@ var life = max_life
 var atk_power = 10
 var max_munition = 3
 var munition = max_munition
+var curr_area: GridArea = null
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+func _ready() -> void:
+	pass
 
 func _input(event):
 	if (event.is_action_pressed("attack") and munition > 0 and $Area2D/atkTimer.is_stopped()):
@@ -56,3 +60,9 @@ func _on_area_2d_body_entered(body):
 func _on_atk_timer_timeout():
 	$Area2D.monitoring = false
 	$Area2D/Sprite2D.visible = false
+
+
+func _on_detection_area_area_entered(area: Area2D) -> void:
+	if(area.is_in_group("area")):
+		#areas.append(area)
+		curr_area = area

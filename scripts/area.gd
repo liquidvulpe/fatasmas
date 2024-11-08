@@ -28,71 +28,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if(player == null):
-		return
-	#print(str("Grid position: ", grid_position))
-	#print(position.x + area_size.x/2 - span)
-	var horizontal = null
-	var vertical = null
-	if(grid.size.x != grid.position.x+1):
-		if(player.global_position.x > global_position.x + area_size.x/2 - span):
-			#pass
-			grid.grid_matrix[grid_position.x+1][grid_position.y].isActive = true
-			horizontal = "direita"
-			print("Direita")
-		else:
-			grid.grid_matrix[grid_position.x+1][grid_position.y].isActive = false
-			horizontal = null
-	if(grid.size.x+1 != grid.position.x):
-		if(player.global_position.x < global_position.x - area_size.x/2 + span):
-			#pass
-			grid.grid_matrix[grid_position.x-1][grid_position.y].isActive = true
-			horizontal = "esquerda"
-			print("Esquerda")
-		else:
-			grid.grid_matrix[grid_position.x-1][grid_position.y].isActive = false
-			horizontal = null
-	if(grid.size.y+1 != grid.position.y):
-		if(player.global_position.y < global_position.y - area_size.y/2 + span):
-			grid.grid_matrix[grid_position.x][grid_position.y-1].isActive = true
-			vertical = "cima"
-			print("Cima")
-		else:
-			grid.grid_matrix[grid_position.x][grid_position.y-1].isActive = false
-			vertical = null
-	if(grid.size.y-1 != grid.position.y):
-		if(player.global_position.y > global_position.y + area_size.y/2 - span):
-			grid.grid_matrix[grid_position.x][grid_position.y+1].isActive = true
-			vertical = "baixo"
-			print("Baixo")
-		else:
-			grid.grid_matrix[grid_position.x][grid_position.y+1].isActive = false
-			vertical = null
-			
-	if(horizontal == "direita" and vertical == "cima"):
-		print("diagonal")
-		if(grid.size.x-1 != grid.position.x and grid.size.y+1 != grid.position.y):
-			grid.grid_matrix[grid_position.x+1][grid_position.y-1].isActive = true
-	else:
-		grid.grid_matrix[grid_position.x+1][grid_position.y-1].isActive = false
-		
-	if(horizontal == "direita" and vertical == "baixo"):
-		if(grid.size.x-1 == grid.position.x and grid.size.y-1 == grid.position.y):
-			grid.grid_matrix[grid_position.x+1][grid_position.y+1].isActive = true
-	else:
-		grid.grid_matrix[grid_position.x+1][grid_position.y+1].isActive = false
-		
-	if(horizontal == "esquerda" and vertical == "cima"):
-		if(grid.size.x+1 == grid.position.x and grid.size.y+1 == grid.position.y):
-			grid.grid_matrix[grid_position.x-1][grid_position.y-1].isActive = true
-	else:
-		grid.grid_matrix[grid_position.x-1][grid_position.y-1].isActive = false
-		
-	if(horizontal == "esquerda" and vertical == "baixo"):
-		if(grid.size.x+1 == grid.position.x and grid.size.y-1 == grid.position.y):
-			grid.grid_matrix[grid_position.x-1][grid_position.y+1].isActive = true
-	else:
-		grid.grid_matrix[grid_position.x-1][grid_position.y+1].isActive = false
+	pass
 
 func _draw() -> void:
 	draw_line(Vector2(area_size.x/-2, area_size.y/-2+0.05 + span), Vector2(area_size.x/2,area_size.y/-2+0.05 + span), gizmos_color, 1)
