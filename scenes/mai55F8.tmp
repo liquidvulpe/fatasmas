@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://d1fph4bavkqeb" path="res://assets/Dungeon Tile Set.png" id="1_ja162"]
 [ext_resource type="PackedScene" uid="uid://ddslys36yg75p" path="res://scenes/fatasma.tscn" id="2_hoieb"]
 [ext_resource type="PackedScene" uid="uid://dv23h5bqvhanu" path="res://scenes/grid.tscn" id="3_orcp7"]
-[ext_resource type="PackedScene" uid="uid://xtx4e356uky4" path="res://scenes/enemy.tscn" id="4_63j10"]
+[ext_resource type="PackedScene" path="res://scenes/enemy.tscn" id="4_63j10"]
 [ext_resource type="PackedScene" uid="uid://ce4c0egq8s2o3" path="res://scenes/saude.tscn" id="5_l76j6"]
 [ext_resource type="PackedScene" uid="uid://bydxbjhf8dg71" path="res://scenes/municao.tscn" id="6_b2clh"]
 
@@ -200,48 +200,21 @@ position = Vector2(81, 398)
 [node name="enemy3" parent="." instance=ExtResource("4_63j10")]
 position = Vector2(403, 401)
 
-[node name="HUD" type="CanvasLayer" parent="."]
-
-[node name="Control" type="Control" parent="HUD"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="HUD/Control"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = 19.0
-offset_right = -31.0
-offset_bottom = 45.0
-grow_horizontal = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="HUD/Control/HBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="HUD/Control/HBoxContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Vida: "
-
-[node name="vida" type="Label" parent="HUD/Control/HBoxContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "0"
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="HUD/Control/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 10
-
-[node name="Label" type="Label" parent="HUD/Control/HBoxContainer/HBoxContainer2"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Munição: "
-
-[node name="municao" type="Label" parent="HUD/Control/HBoxContainer/HBoxContainer2"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "0"
+[connection signal="body_entered" from="Grid/Area2D" to="Grid/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Grid/Area2D" to="Grid/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="Grid/@Area2D@75225" to="Grid/@Area2D@75225" method="_on_body_entered"]
+[connection signal="body_exited" from="Grid/@Area2D@75225" to="Grid/@Area2D@75225" method="_on_body_exited"]
+[connection signal="body_entered" from="Grid/@Area2D@75226" to="Grid/@Area2D@75226" method="_on_body_entered"]
+[connection signal="body_exited" from="Grid/@Area2D@75226" to="Grid/@Area2D@75226" method="_on_body_exited"]
+[connection signal="body_entered" from="Grid/@Area2D@75227" to="Grid/@Area2D@75227" method="_on_body_entered"]
+[connection signal="body_exited" from="Grid/@Area2D@75227" to="Grid/@Area2D@75227" method="_on_body_exited"]
+[connection signal="body_entered" from="Grid/@Area2D@75228" to="Grid/@Area2D@75228" method="_on_body_entered"]
+[connection signal="body_exited" from="Grid/@Area2D@75228" to="Grid/@Area2D@75228" method="_on_body_exited"]
+[connection signal="body_entered" from="Grid/@Area2D@75229" to="Grid/@Area2D@75229" method="_on_body_entered"]
+[connection signal="body_exited" from="Grid/@Area2D@75229" to="Grid/@Area2D@75229" method="_on_body_exited"]
+[connection signal="body_entered" from="Grid/@Area2D@75230" to="Grid/@Area2D@75230" method="_on_body_entered"]
+[connection signal="body_exited" from="Grid/@Area2D@75230" to="Grid/@Area2D@75230" method="_on_body_exited"]
+[connection signal="body_entered" from="Grid/@Area2D@75231" to="Grid/@Area2D@75231" method="_on_body_entered"]
+[connection signal="body_exited" from="Grid/@Area2D@75231" to="Grid/@Area2D@75231" method="_on_body_exited"]
+[connection signal="body_entered" from="Grid/@Area2D@75232" to="Grid/@Area2D@75232" method="_on_body_entered"]
+[connection signal="body_exited" from="Grid/@Area2D@75232" to="Grid/@Area2D@75232" method="_on_body_exited"]

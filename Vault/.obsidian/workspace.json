@@ -23,8 +23,26 @@
               "icon": "lucide-layout-dashboard",
               "title": "Fluxograma"
             }
+          },
+          {
+            "id": "3a8540a20a8c49a3",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "Fluxograma.canvas",
+                "viewState": {
+                  "x": 663.2616429168934,
+                  "y": -709.8405596852491,
+                  "zoom": -0.5297490242810019
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "Fluxograma"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -165,7 +183,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "447b14fb91c56844",
+  "active": "3a8540a20a8c49a3",
   "lastOpenFiles": [
     "Áreas.png.import",
     "statemachine/scripts/fatasma.gd",

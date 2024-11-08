@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3 uid="uid://drk3jlcercigw"]
+
+[ext_resource type="Script" path="res://scripts/morte_menu.gd" id="1_d1t1m"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nbkyg"]
+font_size = 64
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.231373)
+shadow_offset = Vector2(0, 4)
+
+[node name="Morte" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d1t1m")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.148158, 0.0978499, 0.286788, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -207.5
+offset_top = 99.0
+offset_right = 207.5
+offset_bottom = 187.0
+grow_horizontal = 2
+text = "Você morreu!"
+label_settings = SubResource("LabelSettings_nbkyg")
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.0
+offset_top = -45.0
+offset_right = 177.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+text = "Jogar novamente!"
+
+[connection signal="pressed" from="Buttons/Button" to="." method="_on_button_pressed"]

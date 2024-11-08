@@ -2,12 +2,15 @@ extends CharacterBody2D
 class_name Player
 
 const SPEED = 150.0
-var max_life = 100
+var max_life = 30
 var life = max_life
 var atk_power = 10
 var max_munition = 3
 var munition = max_munition
 var curr_area: GridArea = null
+
+@onready var vida: Label = $"../HUD/Control/HBoxContainer/HBoxContainer/vida"
+@onready var municao: Label = $"../HUD/Control/HBoxContainer/HBoxContainer2/municao"
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -21,7 +24,11 @@ func _input(event):
 		$Area2D/Sprite2D.visible = true
 		$Area2D/atkTimer.start()
 		munition -= 1
-		print(munition)
+		#print(munition)
+
+func _process(delta: float) -> void:
+	vida.text = str(life)
+	municao.text = str(munition)
 
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
@@ -38,20 +45,22 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func take_dmg(atk_power):
-	if (life >= 0 and $Timer.is_stopped()):
+	if (life > 0 and $Timer.is_stopped()):
 		life -= atk_power
 		$Timer.start()
 		print(life)
+	
+	if(life <= 0):
+		get_tree().change_scene_to_file("res://scenes/morte.tscn")
+		return
 
 func heal(healing):
 	if(life<max_life):
 		life += healing
 		print(life)
 		
-func recharge(charge):
-	if(munition < max_munition):
-		munition += charge
-		print(munition)
+func recharge():
+	munition = max_munition
 
 func _on_area_2d_body_entered(body):
 	if(body.is_in_group("enemy")):

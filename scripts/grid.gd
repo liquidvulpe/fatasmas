@@ -1,13 +1,12 @@
-@tool
 extends Node2D
 class_name grid
 
-@export var size: Vector2 = Vector2(0,0):
+@export var size: Vector2 = Vector2(3,3):
 	set(value):
 		size = value;
 		queue_redraw()
 
-@export var cell_size: int = 16:
+@export var cell_size: int = 160:
 	set(value):
 		cell_size = value;
 		queue_redraw()
@@ -20,6 +19,14 @@ var grid_matrix = []
 var main_scene: GridArea
 var horizontal: String = ""
 var vertical: String = ""
+var custom_debug: bool = false
+
+var enemies: Array
+
+func _input(event):
+	if (event.is_action_pressed("debug")):
+		custom_debug = true if !custom_debug else false
+		queue_redraw()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -38,10 +45,16 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	enemies = get_tree().get_nodes_in_group("enemy")
+	if(enemies.size() == 0):
+		get_tree().change_scene_to_file("res://scenes/vitoria.tscn")
+	
 	if(player == null):
 		return
 	
 	var curr_area: GridArea = player.curr_area
+	if(player.curr_area == null):
+		return
 	
 	var area_size: Vector2 = player.curr_area.area_size
 	var span: int = player.curr_area.span
@@ -50,9 +63,6 @@ func _process(delta: float) -> void:
 	var isLastCol = curr_area.grid_position.x == size.x-1
 	var isFirstRow = curr_area.grid_position.y == 0
 	var isLastRow = curr_area.grid_position.y == size.y-1
-
-	if(player.curr_area == null):
-		return
 		
 	if(!isLastCol):
 		pass
@@ -113,15 +123,16 @@ func _process(delta: float) -> void:
 	#print(vertical)
 
 func _draw() -> void:
-	for i in size.x:
-		for j in size.y:
-			draw_rect(Rect2(Vector2((global_position.x + cell_size) * i, (global_position.y + cell_size) * j), Vector2(cell_size,cell_size)), Color(Color.RED, 0.2), true)
-			
-			draw_line(Vector2(cell_size*i, cell_size*j+0.5),Vector2(cell_size*i + cell_size, cell_size*j+0.5), Color.RED, 1)
-			draw_line(Vector2(cell_size*i, cell_size*j+cell_size-0.5),Vector2(cell_size*i + cell_size, cell_size*j+cell_size-0.5), Color.RED, 1)
-			
-			draw_line(Vector2(cell_size*i+0.5, cell_size*j),Vector2(cell_size*i+0.5, cell_size*j+cell_size), Color.RED, 1)
-			draw_line(Vector2(cell_size*i-0.5+cell_size, cell_size*j),Vector2(cell_size*i-0.5+cell_size, cell_size*j+0.5+cell_size), Color.RED, 1)
+	if(custom_debug):
+		for i in size.x:
+			for j in size.y:
+				draw_rect(Rect2(Vector2((global_position.x + cell_size) * i, (global_position.y + cell_size) * j), Vector2(cell_size,cell_size)), Color(Color.RED, 0.2), true)
+				
+				draw_line(Vector2(cell_size*i, cell_size*j+0.5),Vector2(cell_size*i + cell_size, cell_size*j+0.5), Color.RED, 1)
+				draw_line(Vector2(cell_size*i, cell_size*j+cell_size-0.5),Vector2(cell_size*i + cell_size, cell_size*j+cell_size-0.5), Color.RED, 1)
+				
+				draw_line(Vector2(cell_size*i+0.5, cell_size*j),Vector2(cell_size*i+0.5, cell_size*j+cell_size), Color.RED, 1)
+				draw_line(Vector2(cell_size*i-0.5+cell_size, cell_size*j),Vector2(cell_size*i-0.5+cell_size, cell_size*j+0.5+cell_size), Color.RED, 1)
 
 func get_cell(x, y):
 	return grid_matrix[x][y]
