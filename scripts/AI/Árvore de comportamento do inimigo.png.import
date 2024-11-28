@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yp04o5d5r07m"
-path="res://.godot/imported/Obsidian_PdpuLZIGMd.png-255c129e6c30b2650d9cb87497b47494.ctex"
+uid="uid://ia55qea1rcns"
+path="res://.godot/imported/Árvore de comportamento do inimigo.png-51b36b28b4c100ebdfae17ee12d7566f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Obsidian_PdpuLZIGMd.png"
-dest_files=["res://.godot/imported/Obsidian_PdpuLZIGMd.png-255c129e6c30b2650d9cb87497b47494.ctex"]
+source_file="res://scripts/AI/Árvore de comportamento do inimigo.png"
+dest_files=["res://.godot/imported/Árvore de comportamento do inimigo.png-51b36b28b4c100ebdfae17ee12d7566f.ctex"]
 
 [params]
 
