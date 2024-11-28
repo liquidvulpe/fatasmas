@@ -32,8 +32,8 @@
               "state": {
                 "file": "Fluxograma.canvas",
                 "viewState": {
-                  "x": 663.2616429168934,
-                  "y": -709.8405596852491,
+                  "x": -1835.020738502708,
+                  "y": -397.4176577735857,
                   "zoom": -0.5297490242810019
                 }
               },
@@ -185,6 +185,9 @@
   },
   "active": "3a8540a20a8c49a3",
   "lastOpenFiles": [
+    "Inimigo.md",
+    "Fluxograma.canvas",
+    "Áreas.png",
     "Áreas.png.import",
     "statemachine/scripts/fatasma.gd",
     "statemachine/scripts",
@@ -199,16 +202,12 @@
     "statemachine/assets/fantasy_ [version 2.0]/tundra_/tundra_ [ice].png",
     "statemachine/assets/fantasy_ [version 2.0]/tundra_/tundra_ [fountain].png.import",
     "statemachine/assets/fantasy_ [version 2.0]/tundra_/tundra_ [fountain].png",
-    "statemachine/assets/fantasy_ [version 2.0]/tundra_/tundra_ [fencesAndWalls].png.import",
     "statemachine/assets/fantasy_ [version 2.0]/tundra_/tundra_ [fencesAndWalls].png",
     "statemachine/assets/fantasy_ [version 2.0]/tundra_/tundra_ [bridgeVertical].png",
     "statemachine/assets/fantasy_ [version 2.0]/tundra_/tundra_ [bridgeHorizontal].png",
     "statemachine/assets/fantasy_ [version 2.0]/tundra_/tundra_ [bridgeAnimatedTiles].png",
     "statemachine/assets/fantasy_ [version 2.0]/tundra_/tundraPath_.png",
-    "statemachine/assets/fantasy_ [version 2.0]/tundra_/igloo_.png",
     "Jogador.md",
-    "Fluxograma.canvas",
-    "Inimigo.md",
     "Welcome.md"
   ]
 }
