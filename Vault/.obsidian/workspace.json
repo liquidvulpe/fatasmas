@@ -32,9 +32,9 @@
               "state": {
                 "file": "Fluxograma.canvas",
                 "viewState": {
-                  "x": -1835.020738502708,
-                  "y": -397.4176577735857,
-                  "zoom": -0.5297490242810019
+                  "x": -2013.2749313748259,
+                  "y": -255.54187161006365,
+                  "zoom": -0.8630823576143352
                 }
               },
               "icon": "lucide-layout-dashboard",
@@ -98,7 +98,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "92fb1e0e680f84c5",

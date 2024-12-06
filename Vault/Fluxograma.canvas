@@ -26,16 +26,20 @@
 		{"id":"2540c1cc064d78d5","type":"text","text":"SEQ","x":-1220,"y":-1361,"width":250,"height":60},
 		{"id":"2d30b3deb1b03137","type":"text","text":"Seguir jogador","x":-1470,"y":-1160,"width":250,"height":60},
 		{"id":"bc2d5d8666221810","type":"text","text":"Atacar jogador","x":-1020,"y":-1160,"width":250,"height":60},
+		{"id":"12eb1201ea046096","type":"text","text":"Ação\nAtacar","x":-1755,"y":-200,"width":250,"height":60,"color":"1"},
+		{"id":"56828ab38d452c5a","type":"text","text":"SEQ\nPerseguir jogador","x":-2201,"y":-424,"width":250,"height":60,"color":"3"},
+		{"id":"0148dc047a930b5d","type":"text","text":"Ação\nSeguir jogador","x":-2383,"y":-200,"width":250,"height":60,"color":"1"},
+		{"id":"4456b323da15478e","type":"text","text":"Condição\nJogador no range","x":-2085,"y":-197,"width":250,"height":60,"color":"2"},
+		{"id":"19afcc62bbf0136a","type":"text","text":"SEQ - Repete\nAtacar jogador","x":-2201,"y":-680,"width":250,"height":60,"color":"3"},
+		{"id":"a5e2956cd18ce7c9","type":"text","text":"SEQ\nAtacar","x":-1595,"y":-420,"width":250,"height":60,"color":"3"},
 		{"id":"41c049873024510c","type":"text","text":"Chegou no jogador","x":-1720,"y":-980,"width":250,"height":60},
+		{"id":"a8bfd3d3174fce71","type":"text","text":"Ação\nLocalizar jogador","x":-2680,"y":-197,"width":250,"height":60,"color":"1"},
+		{"id":"a766c6b4933edfeb","type":"text","text":"Condição\nÁrea ativa","x":-3020,"y":-424,"width":250,"height":60,"color":"2"},
+		{"id":"47f01691775a7dd2","type":"text","text":"Condição - Inversa\nEstá stunnado\n","x":-2566,"y":-413,"width":250,"height":60,"color":"2"},
 		{"id":"4238f8e778c65768","type":"text","text":"Ação\nAtacar jogador","x":-880,"y":59,"width":250,"height":60},
-		{"id":"12eb1201ea046096","type":"text","text":"Ação\nAtacar","x":-1755,"y":-200,"width":250,"height":60},
-		{"id":"a8e0906f02642196","type":"text","text":"Condição\nJogador morto","x":-1435,"y":-200,"width":250,"height":60},
-		{"id":"56828ab38d452c5a","type":"text","text":"SEQ\nPerseguir jogador","x":-2201,"y":-424,"width":250,"height":60},
-		{"id":"a766c6b4933edfeb","type":"text","text":"Condição\nJogador na área","x":-2563,"y":-420,"width":250,"height":60},
-		{"id":"0148dc047a930b5d","type":"text","text":"Ação\nSeguir jogador","x":-2383,"y":-200,"width":250,"height":60},
-		{"id":"4456b323da15478e","x":-2085,"y":-197,"width":250,"height":60,"type":"text","text":"Condição\nJogador no range"},
-		{"id":"19afcc62bbf0136a","type":"text","text":"SEQ - Repete\nAtacar jogador","x":-2201,"y":-680,"width":250,"height":60},
-		{"id":"a5e2956cd18ce7c9","type":"text","text":"SEQ\nAtacar","x":-1595,"y":-420,"width":250,"height":60}
+		{"id":"27f28c8224be16a2","type":"text","text":"SEL\nParar","x":-1420,"y":-200,"width":250,"height":60,"color":"3"},
+		{"id":"8aad2efc8c38f685","type":"text","text":"Condição - Inversa\nEstá stunnado","x":-1260,"y":-60,"width":250,"height":60,"color":"2"},
+		{"id":"a8e0906f02642196","type":"text","text":"Condição - Inversa\nJogador no range","x":-1595,"y":-60,"width":250,"height":60,"color":"2"}
 	],
 	"edges":[
 		{"id":"64077b02fe0960a5","fromNode":"c8a6be253286673f","fromSide":"right","toNode":"4ea32a4049947d51","toSide":"left","color":"1"},
@@ -60,11 +64,15 @@
 		{"id":"2fe11181828db6c6","fromNode":"2540c1cc064d78d5","fromSide":"bottom","toNode":"bc2d5d8666221810","toSide":"top"},
 		{"id":"188e1f08f5e8baaa","fromNode":"2d30b3deb1b03137","fromSide":"bottom","toNode":"41c049873024510c","toSide":"top"},
 		{"id":"5d95294abe977fd9","fromNode":"a5e2956cd18ce7c9","fromSide":"bottom","toNode":"12eb1201ea046096","toSide":"top"},
-		{"id":"b7e15dc94460abdb","fromNode":"a5e2956cd18ce7c9","fromSide":"bottom","toNode":"a8e0906f02642196","toSide":"top"},
 		{"id":"b37fc971b5102e58","fromNode":"56828ab38d452c5a","fromSide":"bottom","toNode":"0148dc047a930b5d","toSide":"top"},
 		{"id":"875dd32ba9423c7c","fromNode":"19afcc62bbf0136a","fromSide":"bottom","toNode":"a766c6b4933edfeb","toSide":"top"},
 		{"id":"7ff67cc59c4f9fd3","fromNode":"19afcc62bbf0136a","fromSide":"bottom","toNode":"56828ab38d452c5a","toSide":"top"},
 		{"id":"3ee20672efd82669","fromNode":"56828ab38d452c5a","fromSide":"bottom","toNode":"4456b323da15478e","toSide":"top"},
-		{"id":"b307dacce7a0912c","fromNode":"19afcc62bbf0136a","fromSide":"bottom","toNode":"a5e2956cd18ce7c9","toSide":"top"}
+		{"id":"b307dacce7a0912c","fromNode":"19afcc62bbf0136a","fromSide":"bottom","toNode":"a5e2956cd18ce7c9","toSide":"top"},
+		{"id":"3a984ee92f85ca03","fromNode":"56828ab38d452c5a","fromSide":"bottom","toNode":"a8bfd3d3174fce71","toSide":"top"},
+		{"id":"05a931b17f345547","fromNode":"19afcc62bbf0136a","fromSide":"bottom","toNode":"47f01691775a7dd2","toSide":"top"},
+		{"id":"3f64a8b01c2daa3b","fromNode":"a5e2956cd18ce7c9","fromSide":"bottom","toNode":"27f28c8224be16a2","toSide":"top"},
+		{"id":"ceb95e4ebd28a8c6","fromNode":"27f28c8224be16a2","fromSide":"bottom","toNode":"a8e0906f02642196","toSide":"top"},
+		{"id":"05c25b531379dd18","fromNode":"27f28c8224be16a2","fromSide":"bottom","toNode":"8aad2efc8c38f685","toSide":"top"}
 	]
 }
