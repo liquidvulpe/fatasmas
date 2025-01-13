@@ -5,6 +5,7 @@ class_name EnemyBT
 @onready var area_2d: Area2D = $Area2D
 @onready var attack_cooldown: Timer = $AttackCooldown
 @onready var behavior_tree_root: BehaviorTreeRoot = $BehaviorTreeRoot
+@onready var timer = $Timer
 
 var target
 
@@ -23,6 +24,7 @@ var atk_power = 10
 
 var can_attack: bool = false
 var is_stunned: bool = false
+var is_attacked: bool = false
 
 func _ready() -> void:
 	target = player
@@ -37,6 +39,9 @@ func set_enemy_velocity(steering: Vector2):
 	velocity += steering
 	velocity = velocity.limit_length(MAX_SPEED)
 	move_and_slide()
+
+func attacked() -> void:
+	is_attacked = true
 
 func _on_area_2d_area_entered(area):
 	if(area.is_in_group("area")):
@@ -59,3 +64,7 @@ func _on_area_2d_body_entered(body):
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if(body.is_in_group("player")):
 		can_attack = false
+
+
+func _on_timer_timeout() -> void:
+	is_stunned = false

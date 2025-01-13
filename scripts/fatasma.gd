@@ -64,7 +64,7 @@ func recharge():
 
 func _on_area_2d_body_entered(body):
 	if(body.is_in_group("enemy")):
-		body.take_dmg(atk_power)
+		body.attacked()
 
 func _on_atk_timer_timeout():
 	$Area2D.monitoring = false
