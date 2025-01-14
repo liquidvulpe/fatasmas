@@ -8,41 +8,23 @@
         "type": "tabs",
         "children": [
           {
-            "id": "447b14fb91c56844",
-            "type": "leaf",
-            "state": {
-              "type": "canvas",
-              "state": {
-                "file": "Fluxograma.canvas",
-                "viewState": {
-                  "x": 445.74908003866324,
-                  "y": 246.11410188322975,
-                  "zoom": -0.5523974355650239
-                }
-              },
-              "icon": "lucide-layout-dashboard",
-              "title": "Fluxograma"
-            }
-          },
-          {
             "id": "3a8540a20a8c49a3",
             "type": "leaf",
             "state": {
               "type": "canvas",
               "state": {
-                "file": "Fluxograma.canvas",
+                "file": "Enemy Behavior Tree.canvas",
                 "viewState": {
-                  "x": -2008.9243370802837,
-                  "y": 7.038470060082091,
-                  "zoom": -1.1964156909476686
+                  "x": 0.5,
+                  "y": 0,
+                  "zoom": -0.8724537965585428
                 }
               },
               "icon": "lucide-layout-dashboard",
-              "title": "Fluxograma"
+              "title": "Enemy Behavior Tree"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -98,8 +80,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "92fb1e0e680f84c5",
@@ -186,8 +167,10 @@
   },
   "active": "3a8540a20a8c49a3",
   "lastOpenFiles": [
-    "Inimigo.md",
     "Fluxograma.canvas",
+    "Enemy Behavior Tree.canvas",
+    "Untitled",
+    "Inimigo.md",
     "Áreas.png",
     "Áreas.png.import",
     "statemachine/scripts/fatasma.gd",
@@ -201,7 +184,6 @@
     "statemachine/assets/fantasy_ [version 2.0]/tundra_/tundra_ [resources].png",
     "statemachine/assets/fantasy_ [version 2.0]/tundra_/tundra_ [ice].png.import",
     "statemachine/assets/fantasy_ [version 2.0]/tundra_/tundra_ [ice].png",
-    "statemachine/assets/fantasy_ [version 2.0]/tundra_/tundra_ [fountain].png.import",
     "statemachine/assets/fantasy_ [version 2.0]/tundra_/tundra_ [fountain].png",
     "statemachine/assets/fantasy_ [version 2.0]/tundra_/tundra_ [fencesAndWalls].png",
     "statemachine/assets/fantasy_ [version 2.0]/tundra_/tundra_ [bridgeVertical].png",

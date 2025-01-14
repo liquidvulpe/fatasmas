@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bydxbjhf8dg71"]
 
-[ext_resource type="Script" path="res://scripts/municao.gd" id="1_ieu6x"]
+[ext_resource type="Script" path="res://scripts/miscs/municao.gd" id="1_ieu6x"]
 [ext_resource type="Texture2D" uid="uid://vke4uu8cq6au" path="res://assets/municao.png" id="1_rnhf1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_su6f6"]

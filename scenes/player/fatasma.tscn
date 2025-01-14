@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://ddslys36yg75p"]
 
-[ext_resource type="Script" path="res://scripts/fatasma.gd" id="1_4b7a8"]
+[ext_resource type="Script" path="res://scripts/player/fatasma.gd" id="1_4b7a8"]
 [ext_resource type="Texture2D" uid="uid://c2ihmascp30v4" path="res://assets/fatasma.png" id="2_sxrui"]
 [ext_resource type="Texture2D" uid="uid://b7j8mhhpf5vat" path="res://assets/forcefield.png" id="3_t2i88"]
 

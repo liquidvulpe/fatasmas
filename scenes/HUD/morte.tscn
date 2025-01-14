@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://drk3jlcercigw"]
 
-[ext_resource type="Script" path="res://scripts/morte_menu.gd" id="1_d1t1m"]
+[ext_resource type="Script" path="res://scripts/HUD/morte_menu.gd" id="1_qo0sr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nbkyg"]
 font_size = 64
@@ -17,7 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_d1t1m")
+script = ExtResource("1_qo0sr")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1

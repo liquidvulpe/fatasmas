@@ -1,21 +1,21 @@
 [gd_scene load_steps=19 format=3 uid="uid://b3ikxj0206aw6"]
 
-[ext_resource type="Script" path="res://scripts/Enemy/enemyBT.gd" id="1_r0pf5"]
+[ext_resource type="Script" path="res://scripts/AI/Enemy/enemyBT.gd" id="1_r0pf5"]
 [ext_resource type="Texture2D" uid="uid://caxgld2veqhn0" path="res://assets/enemy.png" id="2_12ukv"]
 [ext_resource type="Script" path="res://scripts/AI/newBT/nodes/bt_root.gd" id="3_vy5uo"]
 [ext_resource type="Script" path="res://scripts/AI/newBT/nodes/composites/selector.gd" id="4_emshg"]
-[ext_resource type="Script" path="res://scenes/enemy/is_attacked.gd" id="5_0ms0w"]
+[ext_resource type="Script" path="res://scripts/AI/Enemy/bt-leaves/conditions/is_attacked.gd" id="5_0ms0w"]
 [ext_resource type="Script" path="res://scripts/AI/newBT/nodes/composites/sequence.gd" id="5_1jsjn"]
-[ext_resource type="Script" path="res://scripts/Enemy/bt/conditions/is_area_active.gd" id="5_3twue"]
+[ext_resource type="Script" path="res://scripts/AI/Enemy/bt-leaves/conditions/is_area_active.gd" id="5_3twue"]
 [ext_resource type="Script" path="res://scripts/AI/newBT/nodes/decorators/inverter.gd" id="6_qwh2j"]
-[ext_resource type="Script" path="res://scenes/enemy/dead.gd" id="6_r6xao"]
-[ext_resource type="Script" path="res://scenes/enemy/take_dmg.gd" id="6_tytti"]
-[ext_resource type="Script" path="res://scenes/enemy/is_stunned.gd" id="7_ftuq2"]
-[ext_resource type="Script" path="res://scenes/enemy/dispawn.gd" id="7_pf7vg"]
-[ext_resource type="Script" path="res://scripts/Enemy/bt/actions/enemy_steering.gd" id="8_i1464"]
-[ext_resource type="Script" path="res://scenes/enemy/enemy_arrive.gd" id="9_lcdmw"]
-[ext_resource type="Script" path="res://scenes/enemy/is_in_range.gd" id="10_q43sa"]
-[ext_resource type="Script" path="res://scenes/enemy/deal_damage.gd" id="11_cwg37"]
+[ext_resource type="Script" path="res://scripts/AI/Enemy/bt-leaves/actions/dead.gd" id="6_r6xao"]
+[ext_resource type="Script" path="res://scripts/AI/Enemy/bt-leaves/actions/take_dmg.gd" id="6_tytti"]
+[ext_resource type="Script" path="res://scripts/AI/Enemy/bt-leaves/conditions/is_stunned.gd" id="7_ftuq2"]
+[ext_resource type="Script" path="res://scripts/AI/Enemy/bt-leaves/actions/despawn.gd" id="7_pf7vg"]
+[ext_resource type="Script" path="res://scripts/AI/Enemy/bt-leaves/actions/enemy_steering.gd" id="8_i1464"]
+[ext_resource type="Script" path="res://scripts/AI/Enemy/bt-leaves/actions/enemy_arrive.gd" id="9_lcdmw"]
+[ext_resource type="Script" path="res://scripts/AI/Enemy/bt-leaves/conditions/is_in_range.gd" id="10_q43sa"]
+[ext_resource type="Script" path="res://scripts/AI/Enemy/bt-leaves/actions/deal_damage.gd" id="11_cwg37"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2rs0o"]
 
@@ -48,58 +48,58 @@ one_shot = true
 [node name="BehaviorTreeRoot" type="Node" parent="."]
 script = ExtResource("3_vy5uo")
 
-[node name="SelectorComposite" type="Node" parent="BehaviorTreeRoot"]
+[node name="EnemyBehaviors" type="Node" parent="BehaviorTreeRoot"]
 script = ExtResource("4_emshg")
 
-[node name="SelectorComposite" type="Node" parent="BehaviorTreeRoot/SelectorComposite"]
+[node name="DefaultActions" type="Node" parent="BehaviorTreeRoot/EnemyBehaviors"]
 script = ExtResource("4_emshg")
 
-[node name="Dispawn" type="Node" parent="BehaviorTreeRoot/SelectorComposite/SelectorComposite"]
+[node name="Despawn" type="Node" parent="BehaviorTreeRoot/EnemyBehaviors/DefaultActions"]
 script = ExtResource("5_1jsjn")
 
-[node name="Dead" type="Node" parent="BehaviorTreeRoot/SelectorComposite/SelectorComposite/Dispawn"]
+[node name="IsDead" type="Node" parent="BehaviorTreeRoot/EnemyBehaviors/DefaultActions/Despawn"]
 script = ExtResource("6_r6xao")
 
-[node name="Dispawn" type="Node" parent="BehaviorTreeRoot/SelectorComposite/SelectorComposite/Dispawn"]
+[node name="Despawn" type="Node" parent="BehaviorTreeRoot/EnemyBehaviors/DefaultActions/Despawn"]
 script = ExtResource("7_pf7vg")
 
-[node name="TakeDMG" type="Node" parent="BehaviorTreeRoot/SelectorComposite/SelectorComposite"]
+[node name="TakeDMG" type="Node" parent="BehaviorTreeRoot/EnemyBehaviors/DefaultActions"]
 script = ExtResource("5_1jsjn")
 
-[node name="IsAttacked" type="Node" parent="BehaviorTreeRoot/SelectorComposite/SelectorComposite/TakeDMG"]
+[node name="IsAttacked" type="Node" parent="BehaviorTreeRoot/EnemyBehaviors/DefaultActions/TakeDMG"]
 script = ExtResource("5_0ms0w")
 
-[node name="TakeDMG" type="Node" parent="BehaviorTreeRoot/SelectorComposite/SelectorComposite/TakeDMG"]
+[node name="TakeDMG" type="Node" parent="BehaviorTreeRoot/EnemyBehaviors/DefaultActions/TakeDMG"]
 script = ExtResource("6_tytti")
 
-[node name="SequenceComposite" type="Node" parent="BehaviorTreeRoot/SelectorComposite"]
+[node name="AttackPlayer" type="Node" parent="BehaviorTreeRoot/EnemyBehaviors"]
 script = ExtResource("5_1jsjn")
 
-[node name="IsAreaActive" type="Node" parent="BehaviorTreeRoot/SelectorComposite/SequenceComposite"]
+[node name="IsAreaActive" type="Node" parent="BehaviorTreeRoot/EnemyBehaviors/AttackPlayer"]
 script = ExtResource("5_3twue")
 
-[node name="IsNotStunned" type="Node" parent="BehaviorTreeRoot/SelectorComposite/SequenceComposite"]
+[node name="IsNotStunned" type="Node" parent="BehaviorTreeRoot/EnemyBehaviors/AttackPlayer"]
 script = ExtResource("6_qwh2j")
 
-[node name="IsStunned" type="Node" parent="BehaviorTreeRoot/SelectorComposite/SequenceComposite/IsNotStunned"]
+[node name="IsStunned" type="Node" parent="BehaviorTreeRoot/EnemyBehaviors/AttackPlayer/IsNotStunned"]
 script = ExtResource("7_ftuq2")
 
-[node name="FollowPlayer" type="Node" parent="BehaviorTreeRoot/SelectorComposite/SequenceComposite"]
+[node name="FollowPlayer" type="Node" parent="BehaviorTreeRoot/EnemyBehaviors/AttackPlayer"]
 script = ExtResource("5_1jsjn")
 
-[node name="EnemySteering" type="Node" parent="BehaviorTreeRoot/SelectorComposite/SequenceComposite/FollowPlayer"]
+[node name="EnemySteering" type="Node" parent="BehaviorTreeRoot/EnemyBehaviors/AttackPlayer/FollowPlayer"]
 script = ExtResource("8_i1464")
 
-[node name="EnemyArrive" type="Node" parent="BehaviorTreeRoot/SelectorComposite/SequenceComposite/FollowPlayer"]
+[node name="EnemyArrive" type="Node" parent="BehaviorTreeRoot/EnemyBehaviors/AttackPlayer/FollowPlayer"]
 script = ExtResource("9_lcdmw")
 
-[node name="Attack" type="Node" parent="BehaviorTreeRoot/SelectorComposite/SequenceComposite"]
+[node name="Attack" type="Node" parent="BehaviorTreeRoot/EnemyBehaviors/AttackPlayer"]
 script = ExtResource("5_1jsjn")
 
-[node name="IsInRange" type="Node" parent="BehaviorTreeRoot/SelectorComposite/SequenceComposite/Attack"]
+[node name="IsInRange" type="Node" parent="BehaviorTreeRoot/EnemyBehaviors/AttackPlayer/Attack"]
 script = ExtResource("10_q43sa")
 
-[node name="DealDamage" type="Node" parent="BehaviorTreeRoot/SelectorComposite/SequenceComposite/Attack"]
+[node name="DealDamage" type="Node" parent="BehaviorTreeRoot/EnemyBehaviors/AttackPlayer/Attack"]
 script = ExtResource("11_cwg37")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -3,7 +3,7 @@ extends ActionLeaf
 func _tick(actor: CharacterBody2D, blackboard: Blackboard):
 	var steering: Vector2 = Vector2.ZERO
 	
-	var vector_to_target: Vector2 = actor.target.position - actor.position
+	var vector_to_target: Vector2 = actor.player.position - actor.position
 	if(vector_to_target.length() > actor.ARRIVAL_ZONE_RADIUS):
 		return FAILURE
 	

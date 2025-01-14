@@ -11,7 +11,7 @@ class_name grid
 		cell_size = value;
 		queue_redraw()
 
-@export var scene: Resource = preload("res://scenes/area.tscn")
+@export var scene: Resource = preload("res://scenes/miscs/area.tscn")
 @onready var player: Player = $"../fatasma"
 
 var grid_matrix = []
@@ -47,7 +47,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	enemies = get_tree().get_nodes_in_group("enemy")
 	if(enemies.size() == 0):
-		get_tree().change_scene_to_file("res://scenes/vitoria.tscn")
+		get_tree().change_scene_to_file("res://scenes/HUD/vitoria.tscn")
 	
 	if(player == null):
 		return

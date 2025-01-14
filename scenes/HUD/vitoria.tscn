@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://0t23lx8bglbw"]
 
-[ext_resource type="Script" path="res://scripts/morte_menu.gd" id="1_vrxar"]
+[ext_resource type="Script" path="res://scripts/HUD/morte_menu.gd" id="1_vrxar"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nbkyg"]
 font_size = 64

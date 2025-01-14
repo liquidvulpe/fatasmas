@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ce4c0egq8s2o3"]
 
-[ext_resource type="Script" path="res://scripts/saude.gd" id="1_7o8i3"]
+[ext_resource type="Script" path="res://scripts/miscs/saude.gd" id="1_7o8i3"]
 [ext_resource type="Texture2D" uid="uid://cju8ygwtnb3x4" path="res://assets/saude.png" id="1_21m84"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x8vu2"]

@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://drpy37wfi10t0"]
 
 [ext_resource type="Texture2D" uid="uid://d1fph4bavkqeb" path="res://assets/Dungeon Tile Set.png" id="1_bnvs7"]
-[ext_resource type="PackedScene" uid="uid://ddslys36yg75p" path="res://scenes/fatasma.tscn" id="2_mxi07"]
-[ext_resource type="PackedScene" uid="uid://dv23h5bqvhanu" path="res://scenes/grid.tscn" id="3_u3cf6"]
-[ext_resource type="PackedScene" uid="uid://ce4c0egq8s2o3" path="res://scenes/saude.tscn" id="5_dnlja"]
+[ext_resource type="PackedScene" uid="uid://ddslys36yg75p" path="res://scenes/player/fatasma.tscn" id="2_mxi07"]
+[ext_resource type="PackedScene" uid="uid://dv23h5bqvhanu" path="res://scenes/miscs/grid.tscn" id="3_u3cf6"]
+[ext_resource type="PackedScene" uid="uid://ce4c0egq8s2o3" path="res://scenes/miscs/saude.tscn" id="5_dnlja"]
 [ext_resource type="PackedScene" uid="uid://b3ikxj0206aw6" path="res://scenes/enemy/enemyBT.tscn" id="6_bmiqq"]
-[ext_resource type="PackedScene" uid="uid://bydxbjhf8dg71" path="res://scenes/municao.tscn" id="6_fkcoc"]
+[ext_resource type="PackedScene" uid="uid://bydxbjhf8dg71" path="res://scenes/miscs/municao.tscn" id="6_fkcoc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t3wv6"]
 texture = ExtResource("1_bnvs7")
@@ -239,3 +239,9 @@ text = "0"
 
 [node name="enemyBT" parent="." instance=ExtResource("6_bmiqq")]
 position = Vector2(238, 81)
+
+[node name="enemyBT2" parent="." instance=ExtResource("6_bmiqq")]
+position = Vector2(59, 395)
+
+[node name="enemyBT3" parent="." instance=ExtResource("6_bmiqq")]
+position = Vector2(419, 395)

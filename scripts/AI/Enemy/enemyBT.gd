@@ -7,8 +7,6 @@ class_name EnemyBT
 @onready var behavior_tree_root: BehaviorTreeRoot = $BehaviorTreeRoot
 @onready var timer = $Timer
 
-var target
-
 const MAX_SPEED: int = 70
 const MAX_STEERING: float = 2.5
 const AVOID_FORCE: int = 1000
@@ -25,15 +23,6 @@ var atk_power = 10
 var can_attack: bool = false
 var is_stunned: bool = false
 var is_attacked: bool = false
-
-func _ready() -> void:
-	target = player
-	
-func _process(delta: float) -> void:
-	pass
-	
-func _physics_process(delta: float) -> void:
-	pass
 
 func set_enemy_velocity(steering: Vector2):
 	velocity += steering

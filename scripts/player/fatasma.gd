@@ -51,7 +51,7 @@ func take_dmg(atk_power):
 		print(life)
 	
 	if(life <= 0):
-		get_tree().change_scene_to_file("res://scenes/morte.tscn")
+		get_tree().change_scene_to_file("res://scenes/HUD/morte.tscn")
 		return
 
 func heal(healing):

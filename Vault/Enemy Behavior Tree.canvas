@@ -1,0 +1,39 @@
+{
+	"nodes":[
+		{"id":"294bb86c86564ee9","type":"text","text":"SEL - Root\nEnemy","x":-298,"y":-300,"width":250,"height":60,"color":"3"},
+		{"id":"7ae4f02650fbfd8b","type":"text","text":"SEL\nDefault Actions","x":-878,"y":-100,"width":250,"height":60,"color":"3"},
+		{"id":"9fd9c34f79874dfd","type":"text","text":"SEQ\nDespawn","x":-1186,"y":100,"width":250,"height":60,"color":"3"},
+		{"id":"ee81ddc4bf3fe29e","type":"text","text":"SEQ\nTake Damage","x":-559,"y":100,"width":250,"height":60,"color":"3"},
+		{"id":"821069b0d47d3797","type":"text","text":"Condition\nIs Dead","x":-1311,"y":240,"width":250,"height":60,"color":"2"},
+		{"id":"86bdc2a8d49c8e6f","type":"text","text":"Action\nDespawn","x":-1048,"y":240,"width":250,"height":60,"color":"1"},
+		{"id":"cde3b2363809b4f2","type":"text","text":"Condition\nWas Attacked","x":-684,"y":240,"width":250,"height":60,"color":"2"},
+		{"id":"6a57a6c9e66cd3d1","type":"text","text":"Action\nTake Damage","x":-424,"y":240,"width":250,"height":60,"color":"1"},
+		{"id":"b7c8ec028b486659","type":"text","text":"Condition\nIs Area Active","x":-159,"y":90,"width":250,"height":60,"color":"2"},
+		{"id":"1283df2a4b304b63","type":"text","text":"Condition - Inverse\nIs Stunned","x":115,"y":90,"width":250,"height":60,"color":"2"},
+		{"id":"c6fb6630221cae30","type":"text","text":"SEQ\nFollow Player","x":396,"y":90,"width":250,"height":60,"color":"3"},
+		{"id":"b4a43a6739d71292","type":"text","text":"Action\nEnemy Arrive","x":521,"y":240,"width":250,"height":60,"color":"1"},
+		{"id":"bdc592aab0183bb4","type":"text","text":"Action\nEnemy Steering","x":262,"y":240,"width":250,"height":60,"color":"1"},
+		{"id":"c517ad6ca6cf0400","type":"text","text":"SEQ\nAttack","x":927,"y":90,"width":250,"height":60,"color":"3"},
+		{"id":"cfae744b159f7920","type":"text","text":"Condition\nIs In Range","x":802,"y":239,"width":250,"height":60,"color":"2"},
+		{"id":"7c378854cccf8aaa","type":"text","text":"SEQ\nAttack Player","x":396,"y":-100,"width":250,"height":60,"color":"3"},
+		{"id":"2b27f7e85298a961","type":"text","text":"Action\nDeal Damage","x":1062,"y":239,"width":250,"height":60,"color":"1"}
+	],
+	"edges":[
+		{"id":"eed7040389be1dec","fromNode":"294bb86c86564ee9","fromSide":"bottom","toNode":"7ae4f02650fbfd8b","toSide":"top"},
+		{"id":"dac4095b8b94e877","fromNode":"294bb86c86564ee9","fromSide":"bottom","toNode":"7c378854cccf8aaa","toSide":"top"},
+		{"id":"7a89c6822c251ad8","fromNode":"7ae4f02650fbfd8b","fromSide":"bottom","toNode":"9fd9c34f79874dfd","toSide":"top"},
+		{"id":"b6f687707f7da26b","fromNode":"7ae4f02650fbfd8b","fromSide":"bottom","toNode":"ee81ddc4bf3fe29e","toSide":"top"},
+		{"id":"cb77d587ebae2404","fromNode":"9fd9c34f79874dfd","fromSide":"bottom","toNode":"821069b0d47d3797","toSide":"top"},
+		{"id":"bd18cf383c1b11d2","fromNode":"9fd9c34f79874dfd","fromSide":"bottom","toNode":"86bdc2a8d49c8e6f","toSide":"top"},
+		{"id":"45572ebb0a8161b6","fromNode":"ee81ddc4bf3fe29e","fromSide":"bottom","toNode":"cde3b2363809b4f2","toSide":"top"},
+		{"id":"6fc132c1ffad247c","fromNode":"ee81ddc4bf3fe29e","fromSide":"bottom","toNode":"6a57a6c9e66cd3d1","toSide":"top"},
+		{"id":"e88e611d4d07acf9","fromNode":"7c378854cccf8aaa","fromSide":"bottom","toNode":"b7c8ec028b486659","toSide":"top"},
+		{"id":"63bdef94c1cae669","fromNode":"7c378854cccf8aaa","fromSide":"bottom","toNode":"1283df2a4b304b63","toSide":"top"},
+		{"id":"0e6ac966b69b9596","fromNode":"c6fb6630221cae30","fromSide":"bottom","toNode":"bdc592aab0183bb4","toSide":"top"},
+		{"id":"7851376197bb7fcb","fromNode":"c6fb6630221cae30","fromSide":"bottom","toNode":"b4a43a6739d71292","toSide":"top"},
+		{"id":"5ba783ab8064370a","fromNode":"7c378854cccf8aaa","fromSide":"bottom","toNode":"c6fb6630221cae30","toSide":"top"},
+		{"id":"0cac8efe985e9dae","fromNode":"c517ad6ca6cf0400","fromSide":"bottom","toNode":"cfae744b159f7920","toSide":"top"},
+		{"id":"a9ba468dac91a698","fromNode":"c517ad6ca6cf0400","fromSide":"bottom","toNode":"2b27f7e85298a961","toSide":"top"},
+		{"id":"02f563db3f18c3cf","fromNode":"7c378854cccf8aaa","fromSide":"bottom","toNode":"c517ad6ca6cf0400","toSide":"top"}
+	]
+}
